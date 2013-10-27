@@ -1,4 +1,4 @@
-/*Super-Light-FPS-Counter-with-Jank-vision.BSD-License.Githib:puppybits*/
+/*Super-Light-FPS-Counter-with-Jank-vision.BSD-License.Github:puppybits*/
 
 (function(g) {
     var w=window,
@@ -26,7 +26,7 @@
         (function r(c)
         {
             var fps = window.counts(c, true);
-            if(fps && fps.fps <= 55)
+            if(fps && (fps.fps <= 55 || fps.max > 90))
             {
                 m.innerHTML = 'fps: '+fps.fps.toFixed(2)+
                     ' | max: '+fps.max.toFixed(2)+'ms'+
