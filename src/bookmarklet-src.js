@@ -10,7 +10,7 @@
     m=d.createElement('div'),
     c=d.createElement('style'),
     done=function(){e.setAttribute('class','');};
-    c.innerHTML="@-webkit-keyframes blink { 0%{opacity:1;} 75%{opacity:1;} 100%{opacity:0} } #jank.show{display:block !important; -webkit-animation:blink 4.5s;}";
+    c.innerHTML="@-webkit-keyframes blink { 0%{opacity:1;} 75%{opacity:1;} 100%{opacity:0} } @keyframes blink { 0%{opacity:1;} 75%{opacity:1;} 100%{opacity:0} } #jank.show{display:block !important; -webkit-animation:blink 4.5s; animation:blink 4.5s;}";
     s.onload=function(){
         e.setAttribute('id','jank');
         e.setAttribute('class','show');
@@ -21,8 +21,8 @@
         e.appendChild(t);
         e.appendChild(m);
         b.appendChild(e);
-        e.addEventListener("animationEnd", done, false);
         e.addEventListener("webkitAnimationEnd", done, false);
+        e.addEventListener("animationend", done, false);
         (function r(c)
         {
             var fps = window.counts(c, true);
